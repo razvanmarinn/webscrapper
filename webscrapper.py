@@ -5,8 +5,13 @@ import sys
 
 def main(argv):
 
-    URL = argv[1]
-    File = open("title.csv", "a")
+
+    for i in range(len(argv)):
+        URL = argv[i]
+    
+
+    #URL = argv[1]
+    File = open("title.csv", "a" , encoding='utf8' )
     
     writer = csv.writer(File)
     HEADERS = ({'User-Agent':
@@ -23,11 +28,11 @@ def main(argv):
         title_list = []
         for text in title:
 
-            title_strip = text.get_text().replace(',', '').encode("utf-8")
+            title_strip = text.get_text().replace(',', '')
             title_list.append(title_strip)
         
     except AttributeError:
-        str_title = "NA"                
+        title = "NA"                
     
    
 
@@ -37,7 +42,7 @@ def main(argv):
        
         for pr in price:
             
-                price_strip = pr.get_text().replace(',', '').encode("utf-8")
+                price_strip = pr.get_text().replace('.', '')
                 price_list.append(price_strip)
                 
                 
@@ -48,9 +53,10 @@ def main(argv):
     
     writer.writerows([title_list])
     writer.writerows([price_list])
+    
+
 if __name__ == "__main__":
     main(sys.argv)
-
 #main('https://www.amazon.com/s?k=hhd&crid=1LBCOBUKIJS3W&sprefix=hh%2Caps%2C192&ref=nb_sb_noss_2')
 #main('https://www.amazon.com/s?k=ssd&crid=191KTLBDKLR17&sprefix=ss%2Caps%2C748&ref=nb_sb_noss_2')  
 #main('https://www.amazon.com/b?node=16225016011&pf_rd_r=YTVZMPFEP9YXHZAHDBV2&pf_rd_p=e5b0c85f-569c-4c90-a58f-0c0a260e45a0&pd_rd_r=ad2d4c1f-6b53-4e70-be94-796cabecd1d9&pd_rd_w=7WaiY&pd_rd_wg=3Vwk0&ref_=pd_gw_unk')
