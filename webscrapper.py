@@ -11,7 +11,7 @@ def main(argv):
     
 
     #URL = argv[1]
-    File = open("title.csv", "a" , encoding='utf8' )
+    File = open("title.txt", "a+" , encoding='utf8' )
     
     writer = csv.writer(File)
     HEADERS = ({'User-Agent':
@@ -50,9 +50,10 @@ def main(argv):
              
     except AttributeError:
         price = "NA" 
-    
-    writer.writerows([title_list])
-    writer.writerows([price_list])
+    #data = [title_list, price_list]
+    for w in range(len(title_list)):
+        writer.writerow([title_list[w], price_list[w]])
+    #writer.writerow([price_list])
     
 
 if __name__ == "__main__":
