@@ -4,5 +4,5 @@ The script takes an argument from the CLI ( command line interface) which is an 
 
 
 Insert the result data into SSIS and put the result in a SQL Server Database.
-![image](https://user-images.githubusercontent.com/60939601/187092918-29ecaf93-afad-4484-ba67-c7b44efe22f9.png)
-![image](https://user-images.githubusercontent.com/60939601/187092933-f9c5df67-69e7-4749-898d-779eaf866d1d.png)
+![image](https://user-images.githubusercontent.com/60939601/187266898-d7dada7a-953f-4c3e-8fa3-2dd476812834.png)
+![image](https://user-images.githubusercontent.com/60939601/187267013-98ccd875-0233-46ee-82bd-14a3b8809e39.png)
